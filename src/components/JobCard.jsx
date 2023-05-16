@@ -5,28 +5,16 @@ const JobCard = ({ job }) => {
 
   return (
     <article className="bg-filter mb-5">
-      {/* <div>
-        <img src={job.logo} alt={`${job.company} logo`} />
-      </div> */}
-      {/* <div className="job-details"> */}
-      {/* <div className="company-name">
-        <h3>{company}</h3>
-      </div> */}
+      <img src={job.logo} alt={`${job.company} logo`} />
+      <h3>{job.company}</h3>
       <JobBadges job={job} />
-      {/* <div className="job-title">
-          <h2>{position}</h2>
-        </div>
-        <div className="job-description">
-          <p>{`${postedAt} | ${contract} | ${location}`}</p>
-        </div>
-        <div className="job-requirements">
-          {requirements.map((requirement, index) => (
-            <span key={index} className="requirement">
-              {requirement}
-            </span>
-          ))}
-        </div>
-      </div> */}
+      <h2>{job.position}</h2>
+      <p>{`${job.postedAt} | ${job.contract} | ${job.location}`}</p>
+      {requirements.map((requirement, index) => (
+        <span key={index} className="requirement">
+          {requirement}
+        </span>
+      ))}
     </article>
   );
 };
