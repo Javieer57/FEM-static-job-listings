@@ -1,6 +1,6 @@
 const colors = {
-  isNew: "bg-cyan500",
-  featured: "bg-cyan800",
+  isNew: "bg-cyan",
+  featured: "bg-dark",
 };
 
 const JobBadges = ({ job }) => {
