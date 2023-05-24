@@ -1,4 +1,4 @@
-import JobBadges from "./JobBadge";
+import Badge from "./Badge";
 
 const JobCard = ({ job }) => {
   return (
@@ -55,6 +55,25 @@ const Content = ({ job }) => {
 
       <Requirements job={job} />
     </div>
+  );
+};
+
+const JobBadges = ({ job }) => {
+  const { new: isNew, featured } = job;
+
+  const tags = Object.entries({ isNew, featured }).filter(
+    ([tag, value]) => value
+    // Filters the key-value pairs, keeping only those where the tag is true.
+  );
+
+  return (
+    <ul className="flex gap-2 flex-wrap">
+      {tags.map(([tag]) => (
+        <li key={tag}>
+          <Badge tag={tag} />
+        </li>
+      ))}
+    </ul>
   );
 };
 
