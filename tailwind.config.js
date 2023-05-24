@@ -14,6 +14,7 @@ module.exports = {
         cyan: "#5CA5A5",
         dark: "#2B3939",
         gray: "#7C8F8F",
+        cyanLight: "#EFFAFA",
         // cyan100: "#f2f8fc",
         // cyan200: "#EFFAFA",
         // cyan300: "#a5c5c5",

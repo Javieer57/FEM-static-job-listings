@@ -11,7 +11,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon-32x32.png" />
       </Head>
-      <main className="bg-cyan200">
+      <main className="p-4">
         {data.map((job) => (
           <JobCard job={job} key={job.id} />
         ))}
