@@ -12,7 +12,7 @@ const JobBadges = ({ job }) => {
   );
 
   return (
-    <ul className="flex space-x-2">
+    <ul className="flex gap-2 flex-wrap">
       {tags.map(([tag]) => (
         <li
           key={tag}

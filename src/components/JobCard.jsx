@@ -30,12 +30,12 @@ const Content = ({ job }) => {
 
   return (
     <div
-      className={`job-card__content pt-8 px-6 pb-6 rounded-md bg-white relative ${
+      className={`job-card__content pt-8 px-6 pb-6 rounded-md bg-white relative drop-shadow-xl ${
         job["featured"] &&
         "after:left-0 after:top-0 after:rounded-l-md after:absolute after:h-full after:border-l-4 after:border-cyan"
       }`}
     >
-      <div className="flex gap-8 mb-2">
+      <div className="flex gap-7 gap-y-2 mb-2 flex-wrap">
         <h3 className="text-cyan text-sm font-bold md:text-lg">
           {job.company}
         </h3>
