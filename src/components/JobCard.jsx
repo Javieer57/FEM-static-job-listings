@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import Badge from "./Badge";
+import Label from "./Label";
 
 const JobCard = ({ job }) => {
   return (
@@ -90,11 +91,8 @@ const Requirements = ({ job }) => {
   return (
     <ul className="flex gap-4 flex-wrap">
       {requirements.map((requirement, index) => (
-        <li
-          key={index}
-          className="cursor-pointer inline-block font-bold rounded bg-cyan/10 text-cyan py-1 px-2 hover:text-white hover:bg-cyan transition"
-        >
-          {requirement}
+        <li key={index}>
+          <Label text={requirement} />
         </li>
       ))}
     </ul>
