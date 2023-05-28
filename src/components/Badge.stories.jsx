@@ -8,6 +8,12 @@ export default {
 
 export const New = {
   args: {
-    tag: "isNew",
+    text: "isNew",
+  },
+};
+
+export const Featured = {
+  args: {
+    text: "featured",
   },
 };

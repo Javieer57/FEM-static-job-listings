@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import Badge from "./Badge";
 
 const JobCard = ({ job }) => {
@@ -39,7 +40,7 @@ const Content = ({ job }) => {
         <h3 className="text-cyan text-sm font-bold md:text-lg">
           {job.company}
         </h3>
-        <JobBadges job={job} />
+        <Badges job={job} />
       </div>
 
       <h2 className="text-base font-bold text-dark hover:text-cyan transition md:text-xl mb-2">
@@ -47,8 +48,14 @@ const Content = ({ job }) => {
       </h2>
 
       <p className="text-gray text-md md:text-lg mb-4">
-        {/* TODO: contraste y espaciado con los dots */}
-        {metaInfo.join(" • ")}
+        {metaInfo.map((info, index) => (
+          <Fragment key={index}>
+            {info}
+            {index !== metaInfo.length - 1 && (
+              <span className="text-[#B7C4C4]"> • </span>
+            )}
+          </Fragment>
+        ))}
       </p>
 
       <div className="border-t border-t-[#B7C4C4] mb-4"></div>
@@ -58,7 +65,7 @@ const Content = ({ job }) => {
   );
 };
 
-const JobBadges = ({ job }) => {
+const Badges = ({ job }) => {
   const { new: isNew, featured } = job;
 
   const tags = Object.entries({ isNew, featured }).filter(
@@ -70,7 +77,7 @@ const JobBadges = ({ job }) => {
     <ul className="flex gap-2 flex-wrap">
       {tags.map(([tag]) => (
         <li key={tag}>
-          <Badge tag={tag} />
+          <Badge text={tag} />
         </li>
       ))}
     </ul>
@@ -85,7 +92,7 @@ const Requirements = ({ job }) => {
       {requirements.map((requirement, index) => (
         <li
           key={index}
-          className="inline-block font-bold rounded bg-cyan/10 text-cyan py-1 px-2 hover:text-white hover:bg-cyan transition"
+          className="cursor-pointer inline-block font-bold rounded bg-cyan/10 text-cyan py-1 px-2 hover:text-white hover:bg-cyan transition"
         >
           {requirement}
         </li>

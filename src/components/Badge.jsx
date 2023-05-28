@@ -8,25 +8,19 @@ const colors = {
 /**
  * Primary UI component for user interaction
  */
-const Badge = ({ tag }) => {
+const Badge = ({ text }) => {
+  const badgeClasses = `uppercase inline-block px-2 text-white rounded-full font-bold text-sm pt-0.5 ${colors[text]}`;
+
   return (
-    <span
-      className={`uppercase inline-block px-2 text-white rounded-full font-bold text-sm pt-0.5 ${colors[tag]}`}
-    >
-      {tag === "isNew" ? "new!" : tag}
-    </span>
+    <span className={badgeClasses}>{text === "isNew" ? "new!" : text}</span>
   );
 };
 
 Badge.propTypes = {
   /**
-   * Badge content
+   * Badge type
    */
-  tag: PropTypes.string.isRequired,
-};
-
-Badge.defaultProps = {
-  tag: "tag",
+  text: PropTypes.oneOf(["isNew", "featured"]),
 };
 
 export default Badge;
