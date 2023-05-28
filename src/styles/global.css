@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  font-family: "League Spartan", sans-serif;
+}
+
 @layer components {
   .trasition {
     @apply transition-all ease-in-out duration-300;

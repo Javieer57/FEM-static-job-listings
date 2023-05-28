@@ -5,10 +5,9 @@ module.exports = {
   content: ["./src/pages/*", "./src/components/*"],
   theme: {
     extend: {
-      // sm: 375px, lg: 1440px
       screens: {
-        sm: "23.4375rem",
-        lg: "90rem",
+        sm: "23.4375rem", // 375px
+        lg: "90rem", // 1440px
       },
       colors: {
         cyan: "#5CA5A5",
@@ -26,9 +25,6 @@ module.exports = {
         base: "0.9375rem", // 15px
         md: "1rem", // 16px
         xl: "1.375rem", // 22px
-      },
-      fontFamily: {
-        sans: ["var(--font-spartan)", ...fontFamily.sans],
       },
     },
   },

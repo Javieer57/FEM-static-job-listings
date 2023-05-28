@@ -1,20 +1,14 @@
-import { League_Spartan } from "next/font/google";
+import localFont from "next/font/local";
 import "../styles/global.css";
 
-const spartan = League_Spartan({
-  subsets: ["latin"],
-  variable: "--font-spartan",
+const myFont = localFont({
+  src: "../../public/fonts/LeagueSpartan-VariableFont.ttf",
 });
 
 export default function App({ Component, pageProps }) {
   return (
-    <>
-      <style jsx global>{`
-        html {
-          font-family: ${spartan.style.fontFamily};
-        }
-      `}</style>
+    <div className={myFont.className}>
       <Component {...pageProps} />
-    </>
+    </div>
   );
 }
