@@ -5,10 +5,6 @@ module.exports = {
   content: ["./src/pages/*", "./src/components/*"],
   theme: {
     extend: {
-      screens: {
-        sm: "23.4375rem", // 375px
-        lg: "90rem", // 1440px
-      },
       colors: {
         cyan: "#5CA5A5",
         dark: "#2B3939",
