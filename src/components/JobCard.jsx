@@ -1,7 +1,11 @@
+import PropTypes from "prop-types";
 import { Fragment } from "react";
 import Badge from "./Badge";
 import Label from "./Label";
 
+/**
+ *
+ */
 const JobCard = ({ job }) => {
   return (
     <Container featured={job.featured}>
@@ -109,6 +113,13 @@ const Requirements = ({ job }) => {
       ))}
     </ul>
   );
+};
+
+Label.propTypes = {
+  /**
+   *
+   */
+  job: PropTypes.object.isRequired,
 };
 
 export default JobCard;

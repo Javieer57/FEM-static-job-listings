@@ -10,6 +10,7 @@ const preview = {
         date: /Date$/,
       },
     },
+    pseudo: { disabled: true },
   },
 };
 

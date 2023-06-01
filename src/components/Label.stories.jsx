@@ -1,7 +1,7 @@
 import Label from "./Label";
 
 export default {
-  title: "Componentes/Label",
+  title: "Components/Label",
   component: Label,
   tags: ["autodocs"],
   args: {

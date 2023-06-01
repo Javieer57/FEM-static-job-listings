@@ -1,9 +1,12 @@
 import Badge from "./Badge";
 
 export default {
-  title: "Componentes/Badge",
+  title: "Components/Badge",
   component: Badge,
   tags: ["autodocs"],
+  parameters: {
+    pseudo: { disabled: true },
+  },
 };
 
 export const New = {
