@@ -1,4 +1,6 @@
 /** @type { import('@storybook/react').Preview } */
+import "../src/styles/global.css";
+
 const preview = {
   parameters: {
     actions: { argTypesRegex: "^on[A-Z].*" },
@@ -8,6 +10,7 @@ const preview = {
         date: /Date$/,
       },
     },
+    pseudo: { disabled: true },
   },
 };
 
