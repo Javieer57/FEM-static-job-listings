@@ -1,4 +1,4 @@
-import Label from "./Label";
+import Label from "./Labels";
 
 export default {
   title: "Components/Label",

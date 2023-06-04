@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { Fragment } from "react";
 import Badge from "./Badge";
-import Label from "./Label";
+import { Label } from "./Labels";
 
 /**
  *
@@ -115,7 +115,7 @@ const Requirements = ({ job }) => {
   );
 };
 
-Label.propTypes = {
+JobCard.propTypes = {
   /**
    *
    */
