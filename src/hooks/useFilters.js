@@ -21,10 +21,15 @@ const useFilters = () => {
     setApp((prev) => ({ ...prev, filters }));
   };
 
+  const removeAllFilters = () => {
+    setApp((prev) => ({ ...prev, filters: [] }));
+  };
+
   return {
     filters,
     addFilter,
     removeFilter,
+    removeAllFilters,
   };
 };
 
