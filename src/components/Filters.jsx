@@ -35,7 +35,7 @@ const ClearFiltersBtn = () => {
   const { removeAllFilters } = useFilters();
   return (
     <button
-      className="text-gray font-bold"
+      className="text-gray font-bold hover:text-cyan hover:underline transition"
       aria-label="Remove all filters"
       onClick={removeAllFilters}
     >
