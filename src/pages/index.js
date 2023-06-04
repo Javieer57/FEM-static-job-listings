@@ -1,9 +1,12 @@
 import Head from "next/head";
 import JobCard from "@/components/JobCard";
-import data from "../data/data.json";
 import { FilterLabel } from "@/components/Labels";
+import { useContext } from "react";
+import { AppContext } from "@/contexts/JobsContext";
 
 export default function Home() {
+  const [app] = useContext(AppContext);
+
   return (
     <>
       <Head>
@@ -17,9 +20,9 @@ export default function Home() {
         <div className="col-start-1 w-full px-4 max-w-5xl mx-auto row-start-2 row-end-4">
           <div className="flex justify-between items-center gap-5 py-5 pl-5 pr-6 bg-white drop-shadow-xl rounded-md">
             <div className="flex gap-4 flex-wrap">
-              <FilterLabel text="CSS" />
-              <FilterLabel text="Frontend" />
-              <FilterLabel text="Javascript" />
+              {app.filters.map((filter) => (
+                <FilterLabel text={filter} key={filter} />
+              ))}
             </div>
             <span className="text-gray font-bold">Clear</span>
           </div>
@@ -27,7 +30,7 @@ export default function Home() {
       </header>
 
       <main className="px-4 space-y-5 max-w-5xl mx-auto mb-20">
-        {data.map((job) => (
+        {app.jobs.map((job) => (
           <JobCard job={job} key={job.id} />
         ))}
       </main>
