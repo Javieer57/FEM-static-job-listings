@@ -1,7 +1,8 @@
 import PropTypes from "prop-types";
-import { Fragment } from "react";
+import { Fragment, useContext } from "react";
 import Badge from "./Badge";
 import { Label } from "./Labels";
+import { AppContext } from "@/contexts/JobsContext";
 
 /**
  *
@@ -103,12 +104,19 @@ const MetaInfo = ({ job }) => {
 
 const Requirements = ({ job }) => {
   const requirements = [...job.languages, ...job.tools, job.level];
+  const [app, setApp] = useContext(AppContext);
+
+  const addFilter = (filter) => {
+    const filters = [...app.filters];
+    if (!filters.includes(filter)) filters.push(filter);
+    setApp((prev) => ({ ...prev, filters }));
+  };
 
   return (
     <ul className="flex gap-4 flex-wrap sm:justify-end">
       {requirements.map((requirement, index) => (
         <li key={index}>
-          <Label text={requirement} />
+          <Label text={requirement} onClick={() => addFilter(requirement)} />
         </li>
       ))}
     </ul>
