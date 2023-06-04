@@ -3,11 +3,15 @@ import PropTypes from "prop-types";
 /**
  * A customizable label component.
  */
-export const Label = ({ text }) => {
+export const Label = ({ text, onClick }) => {
   return (
-    <span className="cursor-pointer inline-block font-bold rounded bg-cyan/10 text-cyan py-1 px-2 hover:text-white hover:bg-cyan transition">
+    <button
+      className="cursor-pointer inline-block font-bold rounded bg-cyan/10 text-cyan py-1 px-2 hover:text-white hover:bg-cyan transition"
+      onClick={onClick}
+      aria-label={`Add ${text} filter`}
+    >
       {text}
-    </span>
+    </button>
   );
 };
 
@@ -23,6 +27,7 @@ export const FilterLabel = ({ text, onClick }) => {
     <button
       className="cursor-pointer font-bold rounded overflow-hidden flex items-start group"
       onClick={onClick}
+      aria-label={`Remove ${text} filter`}
     >
       <span className="inline-block bg-cyan/10 text-cyan py-1 px-2">
         {text}
