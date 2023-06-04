@@ -1,9 +1,9 @@
 import PropTypes from "prop-types";
-import { Fragment, useContext } from "react";
+import { Fragment } from "react";
 import Badge from "./Badge";
 import { Label } from "./Labels";
-import { AppContext } from "@/contexts/JobsContext";
 import useFilters from "@/hooks/useFilters";
+import Image from "next/image";
 
 /**
  *
@@ -11,7 +11,7 @@ import useFilters from "@/hooks/useFilters";
 const JobCard = ({ job }) => {
   return (
     <Container featured={job.featured}>
-      <Image job={job} />
+      <CompanyImage job={job} />
       <Description job={job} />
       <Requirements job={job} />
     </Container>
@@ -34,13 +34,11 @@ const Container = ({ children, featured }) => {
   );
 };
 
-const Image = ({ job }) => {
+const CompanyImage = ({ job }) => {
   return (
-    <img
-      className="w-12 sm:w-[5.5rem] z-10 absolute -top-6 sm:relative sm:top-0"
-      src={job.logo}
-      alt={`${job.company} logo`}
-    />
+    <div className="w-12 sm:w-[5.5rem] z-10 absolute -top-6 sm:relative sm:top-0 aspect-square">
+      <Image fill src={job.logo} alt={`${job.company} logo`} />
+    </div>
   );
 };
 

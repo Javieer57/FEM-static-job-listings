@@ -1,4 +1,6 @@
+import Image from "next/image";
 import PropTypes from "prop-types";
+import CloseImg from "../../public/images/icon-remove.svg";
 
 /**
  * A customizable label component.
@@ -33,7 +35,7 @@ export const FilterLabel = ({ text, onClick }) => {
         {text}
       </span>
       <span className="bg-cyan self-stretch p-2 flex items-center transition justify-center group-hover:bg-dark">
-        <img src="/images/icon-remove.svg" alt="remove filter" />
+        <Image src={CloseImg} aria-label={`Remove ${text} filter`} />
       </span>
     </button>
   );
