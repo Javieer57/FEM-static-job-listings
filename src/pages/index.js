@@ -1,7 +1,7 @@
 import Head from "next/head";
 import JobCard from "@/components/JobCard";
 import data from "../data/data.json";
-import Label from "@/components/Label";
+import { FilterLabel } from "@/components/Labels";
 
 export default function Home() {
   return (
@@ -17,9 +17,9 @@ export default function Home() {
         <div className="col-start-1 w-full px-4 max-w-5xl mx-auto row-start-2 row-end-4">
           <div className="flex justify-between items-center gap-5 py-5 pl-5 pr-6 bg-white drop-shadow-xl rounded-md">
             <div className="flex gap-4 flex-wrap">
-              <Label text="CSS" />
-              <Label text="Frontend" />
-              <Label text="Javascript" />
+              <FilterLabel text="CSS" onClose={() => {}} />
+              <FilterLabel text="Frontend" onClose={() => {}} />
+              <FilterLabel text="Javascript" onClose={() => {}} />
             </div>
             <span className="text-gray font-bold">Clear</span>
           </div>
