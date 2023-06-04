@@ -3,6 +3,7 @@ import { Fragment, useContext } from "react";
 import Badge from "./Badge";
 import { Label } from "./Labels";
 import { AppContext } from "@/contexts/JobsContext";
+import useFilters from "@/hooks/useFilters";
 
 /**
  *
@@ -103,14 +104,8 @@ const MetaInfo = ({ job }) => {
 };
 
 const Requirements = ({ job }) => {
+  const { addFilter } = useFilters();
   const requirements = [...job.languages, ...job.tools, job.level];
-  const [app, setApp] = useContext(AppContext);
-
-  const addFilter = (filter) => {
-    const filters = [...app.filters];
-    if (!filters.includes(filter)) filters.push(filter);
-    setApp((prev) => ({ ...prev, filters }));
-  };
 
   return (
     <ul className="flex gap-4 flex-wrap sm:justify-end">
