@@ -18,11 +18,11 @@ Label.propTypes = {
   text: PropTypes.string.isRequired,
 };
 
-export const FilterLabel = ({ text, onClose }) => {
+export const FilterLabel = ({ text, onClick }) => {
   return (
     <button
       className="cursor-pointer font-bold rounded overflow-hidden flex items-start group"
-      onClick={onClose}
+      onClick={onClick}
     >
       <span className="inline-block bg-cyan/10 text-cyan py-1 px-2">
         {text}
@@ -39,5 +39,5 @@ FilterLabel.propTypes = {
    * The text to be displayed in the label.
    */
   text: PropTypes.string.isRequired,
-  onClose: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
 };
