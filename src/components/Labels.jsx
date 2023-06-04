@@ -27,6 +27,7 @@ export const FilterLabel = ({ text, onClick }) => {
     <button
       className="cursor-pointer font-bold rounded overflow-hidden flex items-start group"
       onClick={onClick}
+      aria-label={`Remove ${text} filter`}
     >
       <span className="inline-block bg-cyan/10 text-cyan py-1 px-2">
         {text}
