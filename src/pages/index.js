@@ -21,9 +21,17 @@ export default function Home() {
       </header>
 
       <main className="px-4 space-y-5 max-w-5xl mx-auto mb-20">
-        {app.jobs.map((job) => (
-          <JobCard job={job} key={job.id} />
-        ))}
+        {app.jobs
+          .filter((job) => {
+            if (app.filters.length === 0) return true;
+            const requirements = [...job.languages, ...job.tools, job.level];
+            return requirements.some((requirement) =>
+              app.filters.includes(requirement)
+            );
+          })
+          .map((job) => (
+            <JobCard job={job} key={job.id} />
+          ))}
       </main>
     </>
   );
