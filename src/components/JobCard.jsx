@@ -115,7 +115,7 @@ const Requirements = ({ job }) => {
   );
 };
 
-Label.propTypes = {
+JobCard.propTypes = {
   /**
    *
    */

@@ -22,6 +22,10 @@ module.exports = {
         md: "1rem", // 16px
         xl: "1.375rem", // 22px
       },
+      backgroundImage: {
+        "header-mobile": "url('/images/bg-header-mobile.svg')",
+        "header-desktop": "url('/images/bg-header-desktop.svg')",
+      },
     },
   },
   plugins: [],
